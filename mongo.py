@@ -4,7 +4,7 @@ from pymongo.server_api import ServerApi
 import os
 from dotenv import load_dotenv
 load_dotenv()
-class Mongo:
+class MongoConnection:
     def __init__(self):
         user = os.getenv("MONGO_USER")
         password = os.getenv("MONGO_PASSWORD")
@@ -21,4 +21,5 @@ class Mongo:
         except Exception as e:
             print(e)
 
-Mongo().test_connection()
+if __name__ == "__main__":
+   MongoConnection().test_connection()
