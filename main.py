@@ -4,30 +4,31 @@ from selenium.webdriver.common.by import By
 from mongo import MongoConnection
 
 db_client = MongoConnection().client
-db = db_client.get_database('ebay')
-col = db.get_collection('cameras')
+db = db_client.get_database('tiendamia')
+col = db.get_collection('drones')
 
 driver = webdriver.Chrome()
 driver.get("https://tiendamia.com/ec/search?amzs=drones")
-drones = driver.find_elements(By.CLASS_NAME, "search-content")
-print(drones)
+Modelo = driver.find_elements(By.CLASS_NAME, "button-border")
+print(Modelo)
 mongodb = MongoConnection()
 
-for c in drones:
-    drones = c.find_element(by=By.CLASS_NAME, value="item-brand").text
+for c in Modelo:
+    modelo = c.find_element(by=By.CLASS_NAME, value="item-brand").text
     name = c.find_element(by=By.CLASS_NAME, value="item-name").text
-    price = c.find_element(by=By.CLASS_NAME, value="item-price").text
+    price = c.find_element(by=By.CLASS_NAME, value="dollar_price").text
 
     document = {
-        "drones": drones,
-        "name: ": name,
-        "price": price
+        "Modelo": modelo,
+        "Descripcion: ": name,
+        "Precio": price
     }
 
     col.insert_one(document=document)
-    print("Drones: ", drones)
-    print("Nombre: ", name)
+    print("Modelo: ", modelo)
+    print("Descripcion: ", name)
     print("Precio: ", price)
     print('=' * 40)
 
-driver.quit()
+driver.close()
+
