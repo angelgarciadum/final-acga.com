@@ -11,10 +11,8 @@ class MongoConnection:
         db_hostname = os.getenv("MONGO_HOST")
         uri = f"mongodb+srv://{user}:{password}@cluster0.pgdzrt2.mongodb.net/?retryWrites=true&w=majority"
 
-    # Create a new client and connect to the server
         self.client = MongoClient(uri, server_api=ServerApi('1'))
     def test_connection(self):
-        # Send a ping to confirm a successful connection
         try:
             self.client.admin.command('ping')
             print("Pinged your deployment. You successfully connected to MongoDB!")
