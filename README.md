@@ -97,15 +97,6 @@ class MongoConnection:
 if __name__ == "__main__":  
    MongoConnection().test_connection()
 ```
-Configuración de Flask Para presentación de datos a nivel de servidor local y ver los datos extraídos a través de un navegador se debe de ejecutar líneas de código en pyton de la siguiente manera
-```
-          from flask import Flask
-          app = Flask(__name__)
-          #ejemplo:
-          @app.route("/")
-          def hello_world():
-          return "<p>Hello, World!</p>"
-```
 ## 4. Autor
 angelgarciadum
 
