@@ -75,5 +75,5 @@ driver.close()
 ## 4. Autor
 angelgarciadum
 
-## 5. Licencia
+## 5. Licencias
 Se trabajó con Código Abierto.
