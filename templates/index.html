@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+    <h1>Drones</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+
+            <label for="name">Nombre del Producto:</label>
+            <input id="name" name="Name" value="{{ Drones.Name }}">
+            <label for="Price">Precio:</label>
+            <input id="Price" name="Price" value="{{ Drones.Price }}">
+            <label for="Descripcion">Descripcion del Producto:</label>
+            <input id="Descripcion" name="Descripcion" value="{{ Drones.Descripcion }}">
+
+
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

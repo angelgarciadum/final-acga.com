@@ -31,4 +31,3 @@ for c in Modelo:
     print('=' * 40)
 
 driver.close()
-
