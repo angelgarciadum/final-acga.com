@@ -73,7 +73,7 @@ driver.close()
 ```
 
 ## 4. Autor
-angelgarciadum
+Ángel García Adum. @acgadum
 
 ## 5. Licencias
 Se trabajó con Código Abierto.
